@@ -44,7 +44,7 @@ proc renderHeader(tweet: Tweet; retweet: string; prefs: Prefs): VNode =
           linkUser(tweet.user, class="username")
 
         span(class="tweet-date"):
-          a(href=getLink(tweet), title=tweet.getTime):
+          a(href="https://twitter.com/i/status/" & $tweet.threadId, title=tweet.getTime):
             text tweet.getShortTime
 
 proc renderAlbum(tweet: Tweet): VNode =
