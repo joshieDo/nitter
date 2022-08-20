@@ -20,7 +20,7 @@ proc createHomeRouter*(cfg: Config) =
         after = getCursor()
         names = getNames(prefs.following)
 
-      var query = request.getQuery("", prefs.following)
+      var query = request.getQuery("with_replies", prefs.following)
       query.fromUser = names
 
       if @"scroll".len > 0:
